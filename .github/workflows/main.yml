@@ -23,10 +23,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Rewards the initiating user with cryptocurrency       
-      - uses: perkexchange/github-action@v0.3
+      - uses: perkexchange/github-action@v0.5-alpha
         name: Perk.Exchange Reward
         with:
-            apiToken: ${{ secrets.PERKEXCHANGE_TOKEN }}
+            apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
             campaignReference: c19d6d5ba87925cc3f9526f6bba442bf04c5c807569e5dbc8f344e44323b7066
             userId: ${{ github.event.sender.id }}
             platform: github
