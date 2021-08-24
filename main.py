@@ -1,13 +1,28 @@
 import os
-import requests  # noqa We are just importing this to prove the dependency installed correctly
+import requests
 
 
 def main():
-    my_input = os.environ["INPUT_MYINPUT"]
+    api_token = os.environ["INPUT_APITOKEN"]
+    campaign_reference = os.environ["INPUT_CAMPAIGNREFERENCE"]
+    user_id = os.environ["INPUT_USERID"]
+    platform = os.environ["INPUT_PLATFORM"]
+    amount = os.environ["INPUT_AMOUNT"]
+    server = os.environ["INPUT_SERVER"]
 
-    my_output = f"Hello {my_input}"
-
-    print(f"::set-output name=myOutput::{my_output}")
+    r = requests.post(
+        "{}/api/campaigns/{}/reward".format(server, campaign_reference),
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Token {}".format(api_token),
+        },
+        json={
+            "platform": platform,
+            "user_id": user_id,
+            "amount": float(amount),
+        },
+    )
 
 
 if __name__ == "__main__":

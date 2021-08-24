@@ -1,6 +1,6 @@
 name: "Perk.Exchange Reward"
 description: "Reward users when they engage with your repos"
-author: "Jacob Tomlinson"
+author: "Geoff Whittington"
 inputs:
   campaignReference:
     description: "Campaign reference"
@@ -14,6 +14,9 @@ inputs:
   amount:
     description: "Reward amount (KIN)"
     default: "10"
+  server:
+    description: "Perk.Exchange server"
+    default: "https://perk.exchange"
 runs:
   using: "docker"
   image: "Dockerfile"
