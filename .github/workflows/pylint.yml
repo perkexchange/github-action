@@ -11,9 +11,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Run action    
-    - name: Perk.Exchange Reward
-      uses: perkexchange/github-action@v0.2
+      name: Run action    
+    - uses: perkexchange/github-action@v0.2
+      name: Perk.Exchange Reward
       with:
         apiToken: 88290042b76cf82cffa292233439df17749a1d3c6d0cbb372fe3c1f73120e539
         campaignReference: c19d6d5ba87925cc3f9526f6bba442bf04c5c807569e5dbc8f344e44323b7066
