@@ -2,6 +2,9 @@ name: "Perk.Exchange Reward"
 description: "Reward users when they engage with your repos"
 author: "Geoff Whittington"
 inputs:
+  apiToken:
+    description: "Perk.Exchange API Token"
+    default: ""
   campaignReference:
     description: "Campaign reference"
     default: ""
