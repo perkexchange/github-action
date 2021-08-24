@@ -36,4 +36,5 @@ jobs:
             campaignReference: c19d6d5ba87925cc3f9526f6bba442bf04c5c807569e5dbc8f344e44323b7066
             userId: ${{ github.event.sender.id }}
             platform: github
-            amount: 1        
+            amount: 1
+            server: https://9c7d-99-251-23-45.ngrok.io
