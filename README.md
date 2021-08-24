@@ -2,15 +2,15 @@
 
 Reward developers and users with cryptocurrency for performing certain actions. Rewards are provisioned by <https://perk.exchange>.
 
-## Get Access
+## Requirements
 
-We are in the test phase of this action. Please reach out to us on Twitter for early access:
+- **Enable access** We are in the test phase of this action. Please reach out to us on [Twitter](https://twitter.com/perkexchange) for access.
 
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/perkexchange.svg?style=social&label=Perk.Exchange)](https://twitter.com/perkexchange)
+- **Users Register with Perk.Exchange** Users must first connect to https://perk.exchange with their GitHub user. Rewards are not provisioned for GitHub users that haven't already registered with Perk.Exchange.
 
 ## Usage
 
-Copy the example workflow below
+Copy the example workflow below.
 
 ### Example workflow
 
