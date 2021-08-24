@@ -23,10 +23,10 @@ jobs:
 
     steps:
         # Reward the initiating user with cryptocurrency       
-      - uses: perkexchange/github-action@v0.3
+      - uses: perkexchange/github-action@v0.5-alpha
         name: Perk.Exchange Reward
         with:
-            apiToken: XXXXXXXXXXX
+            apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
             campaignReference: YYYYYYYYYYY
             userId: ${{ github.event.sender.id }}
             amount: 3
@@ -36,7 +36,7 @@ jobs:
 
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
-| `apiToken`  | Perk.Exchange developer API token. Once enabled, available here: https://perk.exchange/Developer    |
+| `apiToken`  | Perk.Exchange developer API token. Once enabled, available here https://perk.exchange/Developer **DO NOT PASTE** Use repo secrets    |
 | `campaignReference`  | A reference that uniquely identifies your campaign (Perk)    |
 | `userId`  | The user's internal Id    |
 | `amount`  | Reward amount   |
