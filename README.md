@@ -23,7 +23,7 @@ jobs:
 
     steps:
         # Reward the initiating user with cryptocurrency       
-      - uses: perkexchange/github-action@v0.5-alpha
+      - uses: perkexchange/github-action@v0.7-alpha
         name: Perk.Exchange Reward
         with:
             apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
