@@ -10,7 +10,7 @@ Reward developers and users with cryptocurrency for performing certain actions. 
 
 ## Usage
 
-Copy the example workflow below.
+Store your Perk.Exchange **API Token** and **Campaign reference** in repository secrets. Use the example workflow below as a base and modify to suit your needs. You can also refer to this repository's workflow.
 
 ### Example workflow
 
@@ -27,7 +27,7 @@ jobs:
         name: Perk.Exchange Reward
         with:
             apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
-            campaignReference: YYYYYYYYYYY
+            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
             userId: ${{ github.event.sender.id }}
             amount: 3
 ```
@@ -36,8 +36,8 @@ jobs:
 
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
-| `apiToken`  | Perk.Exchange developer API token. Once enabled, available here https://perk.exchange/Developer **DO NOT PASTE** Use repo secrets    |
-| `campaignReference`  | A reference that uniquely identifies your campaign (Perk)    |
+| `apiToken`  | Perk.Exchange developer API token. Once enabled, available here: https://perk.exchange/Developer Store in a repo secret    |
+| `campaignReference`  | A string reference that uniquely identifies your campaign (Perk) - Store in a repo secret |
 | `userId`  | The user's internal Id    |
 | `amount`  | Reward amount   |
 | `platform` _(optional)_  | User platform: github (default), twitter, github, google, slack, discord    |
