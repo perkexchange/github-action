@@ -1,6 +1,6 @@
 # This is a basic workflow to reward your developers with cryptocurrency using Perk.Exchange
 
-name: Reward workflow
+name: Perk.Exchange
 
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  reward:
+  rewards:
     runs-on: ubuntu-latest
     steps:
       # Rewards the initiating user with cryptocurrency       
