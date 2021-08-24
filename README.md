@@ -1,6 +1,12 @@
 # Perk.Exchange GitHub Action
 
-Reward your developers and users with cryptocurrency using Perk.Exchange.
+Reward developers and users with cryptocurrency for performing certain actions. Rewards are provisioned by <https://perk.exchange>.
+
+## Get Access
+
+We are in the test phase of this action. Please reach out to us on Twitter for early access:
+
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/perkexchange.svg?style=social&label=Perk.Exchange)](https://twitter.com/perkexchange)
 
 ## Usage
 
@@ -30,8 +36,8 @@ jobs:
 
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
-| `apiToken`  | Perk.Exchange developer API token. Available here: https://perk.exchange/Developer    |
-| `campaignReference`  | Public reference for campaign    |
+| `apiToken`  | Perk.Exchange developer API token. Once enabled, available here: https://perk.exchange/Developer    |
+| `campaignReference`  | A reference that uniquely identifies your campaign (Perk)    |
 | `userId`  | The user's internal Id    |
 | `amount`  | Reward amount   |
 | `platform` _(optional)_  | User platform: github (default), twitter, github, google, slack, discord    |
