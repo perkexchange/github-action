@@ -24,11 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-        
+      # Rewards the initiating user with cryptocurrency       
       - uses: perkexchange/github-action@v0.3
         name: Perk.Exchange Reward
         with:
@@ -36,5 +32,5 @@ jobs:
             campaignReference: c19d6d5ba87925cc3f9526f6bba442bf04c5c807569e5dbc8f344e44323b7066
             userId: ${{ github.event.sender.id }}
             platform: github
-            amount: 1
+            amount: 3
             server: https://9c7d-99-251-23-45.ngrok.io
