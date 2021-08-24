@@ -49,3 +49,7 @@ None
 ## Examples
 
 > NOTE: People ❤️ cut and paste examples. Be generous with them!
+
+## Sponsorship
+
+We can connect your brand with thousands of developers using Perk.Exchange. Please DM us on [Twitter](https://twitter.com/perkexchange) for more details.
