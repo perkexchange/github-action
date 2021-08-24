@@ -1,13 +1,19 @@
-name: "Python Container Action Template"
-description: "Get started with Python Container actions"
+name: "Perk.Exchange Reward"
+description: "Reward users when they engage with your repos"
 author: "Jacob Tomlinson"
 inputs:
-  myInput:
-    description: "Input to use"
-    default: "world"
-outputs:
-  myOutput:
-    description: "Output from the action"
+  campaignReference:
+    description: "Campaign reference"
+    default: ""
+  userId:
+    description: "User ID"
+    default: ""
+  platform:
+    description: "Platform"
+    default: "github"
+  amount:
+    description: "Reward amount (KIN)"
+    default: "10"
 runs:
   using: "docker"
   image: "Dockerfile"
