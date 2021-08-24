@@ -21,7 +21,7 @@ jobs:
         name: Perk.Exchange Reward
         with:
             apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
-            campaignReference: c19d6d5ba87925cc3f9526f6bba442bf04c5c807569e5dbc8f344e44323b7066
+            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
             userId: ${{ github.event.sender.id }}
             platform: github
             amount: 3
