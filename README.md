@@ -16,9 +16,12 @@ Store your Perk.Exchange **API Token** and **Campaign reference** in repository 
 
 ```yaml
 name: My Workflow
-on: [push]
+on:
+  pull_request:
+    types: [ closed ]
 jobs:
   reward:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
