@@ -3,10 +3,8 @@
 name: Perk.Exchange
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
   pull_request:
+    types: [ closed ]
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -14,6 +12,7 @@ on:
 
 jobs:
   rewards:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Dump GitHub context
