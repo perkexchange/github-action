@@ -16,7 +16,7 @@ Store your Perk.Exchange **API Token** and **Campaign reference** in repository 
 
 ```yaml
 name: My Workflow
-on: [push, pull_request]
+on: [push]
 jobs:
   reward:
     runs-on: ubuntu-latest
@@ -52,4 +52,4 @@ None
 
 ## Sponsorship
 
-We can connect your brand with thousands of developers using Perk.Exchange. Please DM us on [Twitter](https://twitter.com/perkexchange) for more details.
+We can connect your brand with developers using Perk.Exchange. Please DM us on [Twitter](https://twitter.com/perkexchange) for more details.
