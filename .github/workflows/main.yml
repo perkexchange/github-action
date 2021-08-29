@@ -16,6 +16,10 @@ jobs:
   rewards:
     runs-on: ubuntu-latest
     steps:
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
       # Rewards the initiating user with cryptocurrency       
       - uses: perkexchange/github-action@v0.7-alpha
         name: Perk.Exchange Reward
