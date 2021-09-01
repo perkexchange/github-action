@@ -24,4 +24,3 @@ jobs:
             userId: ${{ github.event.pull_request.user.id }}
             platform: github
             amount: 1
-            server: https://9c7d-99-251-23-45.ngrok.io
