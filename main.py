@@ -3,19 +3,18 @@ import requests
 
 
 def main():
-    api_token = os.environ["INPUT_APITOKEN"]
-    campaign_reference = os.environ["INPUT_CAMPAIGNREFERENCE"]
+    campaign_secret = os.environ["INPUT_CAMPAIGNSECRET"]
     user_id = os.environ["INPUT_USERID"]
     platform = os.environ["INPUT_PLATFORM"]
     amount = os.environ["INPUT_AMOUNT"]
     server = os.environ["INPUT_SERVER"]
 
     r = requests.post(
-        "{}/api/campaigns/{}/reward".format(server, campaign_reference),
+        "{}/api/rewards".format(server),
         headers={
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "Authorization": "Token {}".format(api_token),
+            "Authorization": "Bearer {}".format(campaign_secret),
         },
         json={
             "platform": platform,

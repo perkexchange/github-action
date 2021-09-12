@@ -15,8 +15,7 @@ docker run --net="host" --env-file test.env ga-docker
 ### Sample environment file
 
 ```
-INPUT_APITOKEN=XXXXXX
-INPUT_CAMPAIGNREFERENCE=YYYYYYY
+INPUT_CAMPAIGNSECRET=XXXXXXXXXXXX
 INPUT_USERID=131
 INPUT_PLATFORM=twitter
 INPUT_AMOUNT=1
