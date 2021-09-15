@@ -16,11 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Rewards the user who opened the PR with cryptocurrency       
-      - uses: perkexchange/github-action@v0.7-alpha
+      - uses: perkexchange/github-action@v0.8-alpha
         name: Perk.Exchange Reward
         with:
-            apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
-            campaignReference: ${{ secrets.PERKEXCHANGE_CAMPAIGNREFERENCE }}
+            campaignSecret: ${{ secrets.PERKEXCHANGE_CAMPAIGNSECRET }}
             userId: ${{ github.event.pull_request.user.id }}
             platform: github
             amount: 1
