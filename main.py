@@ -3,13 +3,15 @@ import requests
 
 
 def main():
-    if "INPUT_CAMPAIGNSECRET" not in os.environ:
+    if "INPUT_CAMPAIGNSECRET" in os.environ and os.environ["INPUT_CAMPAIGNSECRET"]:
+        campaign_secret = os.environ["INPUT_CAMPAIGNSECRET"]
+    else:
         raise Exception("Missing INPUT_CAMPAIGNSECRET")
-    if "INPUT_USERID" not in os.environ:
-        raise Exception("Missing INPUT_USERID")
 
-    campaign_secret = os.environ["INPUT_CAMPAIGNSECRET"]
-    user_id = os.environ["INPUT_USERID"]
+    if "INPUT_USERID" in os.environ and os.environ["INPUT_USERID"]:
+        user_id = os.environ["INPUT_USERID"]
+    else:
+        raise Exception("Missing INPUT_USERID")
 
     if "INPUT_AMOUNT" in os.environ and os.environ["INPUT_AMOUNT"]:
         amount = os.environ["INPUT_AMOUNT"]
