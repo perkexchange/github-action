@@ -11,17 +11,17 @@ def main():
     campaign_secret = os.environ["INPUT_CAMPAIGNSECRET"]
     user_id = os.environ["INPUT_USERID"]
 
-    if "INPUT_AMOUNT" in os.environ:
+    if "INPUT_AMOUNT" in os.environ and os.environ["INPUT_AMOUNT"]:
         amount = os.environ["INPUT_AMOUNT"]
     else:
         amount = 1
 
-    if "INPUT_PLATFORM" in os.environ:
+    if "INPUT_PLATFORM" in os.environ and os.environ["INPUT_PLATFORM"]:
         platform = os.environ["INPUT_PLATFORM"]
     else:
         platform = "github"
 
-    if "INPUT_SERVER" in os.environ:
+    if "INPUT_SERVER" in os.environ and os.environ["INPUT_SERVER"]:
         server = os.environ["INPUT_SERVER"]
     else:
         server = "https://perk.exchange"
