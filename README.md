@@ -12,6 +12,8 @@ Reward developers and users with cryptocurrency for performing certain actions. 
 
 Store your Perk.Exchange **Campaign secret** in a repository secret. Use the example workflow below as a base and modify to suit your needs. You can also refer to this repository's workflow.
 
+**IMPORTANT**: Secrets are not passed to workflows that are triggered by a pull request from a fork. https://docs.github.com/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
+
 ### Example workflow
 
 ```yaml
@@ -26,7 +28,7 @@ jobs:
 
     steps:
         # Reward the user who opened the PR with cryptocurrency       
-      - uses: perkexchange/github-action@v0.8-alpha
+      - uses: perkexchange/github-action@v0.11-alpha
         name: Perk.Exchange Reward
         with:
             campaignSecret: ${{ secrets.PERKEXCHANGE_CAMPAIGNSECRET }}
