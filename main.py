@@ -3,7 +3,9 @@ import requests
 import json
 
 
-def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
+def create_invoice(
+    pr_details, invoice_endpoint, api_key, amount, currency, order_id=None
+):
 
     # Extract PR number from the ref
     pr_url = pr_details.get("pull_request", {}).get("html_url")
@@ -25,7 +27,7 @@ def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
         "currency": currency,
         "memo": memo,
         "is_public": True,
-        "order_id": f"{repo_name}:{source_branch}",
+        "order_id": order_id or f"{repo_name}:{source_branch}",
     }
 
     # Headers with API key
@@ -71,19 +73,18 @@ if __name__ == "__main__":
     if not api_token:
         raise Exception("Missing INPUT_APITOKEN")
 
+    order_id = os.environ.get("INPUT_ORDERID")
     amount = os.environ.get("INPUT_AMOUNT", 1)
     currency = os.environ.get("INPUT_CURRENCY", "usd")
-
     server = os.environ.get("INPUT_SERVER", "https://perk.exchange")
 
     pr_details = get_pull_request_info()
 
-    print(pr_details)
-    # Create the invoice
     create_invoice(
         pr_details,
         f"{server}/api/invoices",
         api_key=api_token,
         amount=amount,
         currency=currency,
+        order_id=order_id,
     )
