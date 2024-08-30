@@ -2,6 +2,10 @@
 
 Add a donation button to your pull requrests. Donations are handled by <https://perk.exchange> using <https://getcode.com>.
 
+## Detailed Instructions
+
+- Go to <https://docs.perk.exchange/integrations/github> for detailed instructions.
+
 ## Requirements
 
 - **Unlock** integrations on your <https://perk.exchange/Account> page.
