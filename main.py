@@ -7,6 +7,7 @@ def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
 
     # Extract PR number from the ref
     pr_url = pr_details.get("pull_request", {}).get("html_url")
+    source_branch = pr_details.get("pull_request", {}).get("head", {}).get("label")
     repo_name = pr_details.get("repository", {}).get("name")
 
     # Convert merge date to a more human-readable format
@@ -24,7 +25,7 @@ def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
         "currency": currency,
         "memo": memo,
         "is_public": True,
-        "order_id": pr_url,
+        "order_id": source_branch,
     }
 
     # Headers with API key
