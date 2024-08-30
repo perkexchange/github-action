@@ -55,4 +55,4 @@ None
 
 ## Sponsorship
 
-We can connect your brand with developers using Perk.Exchange. Please DM us on [Twitter](https://twitter.com/perkexchange) for more details.
+Please DM us on [X](https://x.com/perkexchange) for more details.
