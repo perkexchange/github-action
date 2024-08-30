@@ -1,16 +1,16 @@
 # Perk.Exchange GitHub Action
 
-Reward developers and users with cryptocurrency for performing certain actions. Rewards are provisioned by <https://perk.exchange>.
+Add a donation button to your pull requrests. Donations are handled by <https://perk.exchange> using <https://getcode.com>.
 
 ## Requirements
 
-- **Enable access** We are in the test phase of this action. Please reach out to us on [Twitter](https://twitter.com/perkexchange) for access.
+- **Unlock** integrations on your <https://perk.exchange/Account> page.
 
-- **Users Register with Perk.Exchange** Users must first connect to https://perk.exchange with their GitHub user. Rewards are not provisioned for GitHub users that haven't already registered with Perk.Exchange.
+- **Generate an API token** on the <https://perk.exchange/Integrations> page.
 
 ## Usage
 
-Store your Perk.Exchange **Campaign secret** in a repository secret. Use the example workflow below as a base and modify to suit your needs. You can also refer to this repository's workflow.
+Store your Perk.Exchange **API token** in a repository secret. Use the example workflow below as a base and modify to suit your needs. You can also refer to this repository's workflow.
 
 **IMPORTANT**: Secrets are not passed to workflows that are triggered by a pull request from a fork. https://docs.github.com/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets
 
@@ -34,7 +34,7 @@ jobs:
             apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
             currency: "USD"
             amount: 1
-
+```
 ### Inputs
 
 | Input                                             | Description                                        |
