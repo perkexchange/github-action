@@ -4,9 +4,10 @@ import json
 
 
 def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
-    # Extract details from the pull request
-    repo_name = pr_details.get("base", {}).get("repo", {}).get("full_name")
-    pr_url = pr_details.get("html_url")
+
+    # Extract PR number from the ref
+    pr_url = pr_details.get("pull_request", {}).get("html_url")
+    repo_name = pr_details.get("repository", {}).get("name")
 
     # Convert merge date to a more human-readable format
 
@@ -23,6 +24,7 @@ def create_invoice(pr_details, invoice_endpoint, api_key, amount, currency):
         "currency": currency,
         "memo": memo,
         "is_public": True,
+        "order_id": pr_url,
     }
 
     # Headers with API key
@@ -53,16 +55,6 @@ def get_pull_request_info():
         with open(event_path, "r") as file:
             event_data = json.load(file)
 
-        # Extract PR number from the ref
-        pr_number = event_data.get("pull_request", {}).get("number")
-        pr_url = event_data.get("pull_request", {}).get("html_url")
-
-        if pr_number and pr_url:
-            print(f"Pull Request Number: {pr_number}")
-            print(f"Pull Request URL: {pr_url}")
-        else:
-            print("No pull request data found.")
-
     except FileNotFoundError:
         print(f"Event file not found at {event_path}.")
     except json.JSONDecodeError:
@@ -85,6 +77,7 @@ if __name__ == "__main__":
 
     pr_details = get_pull_request_info()
 
+    print(pr_details)
     # Create the invoice
     create_invoice(
         pr_details,
