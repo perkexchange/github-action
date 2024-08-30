@@ -27,23 +27,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-        # Reward the user who opened the PR with cryptocurrency       
-      - uses: perkexchange/github-action@v0.11-alpha
-        name: Perk.Exchange Reward
+        # Create donation button for this PR
+      - uses: perkexchange/github-action@v0.15-alpha
+        name: Perk.Exchange Donation Button
         with:
-            campaignSecret: ${{ secrets.PERKEXCHANGE_CAMPAIGNSECRET }}
-            userId: ${{ github.event.pull_request.user.id }}
+            apiToken: ${{ secrets.PERKEXCHANGE_APITOKEN }}
+            currency: "USD"
             amount: 1
-```
 
 ### Inputs
 
 | Input                                             | Description                                        |
 |------------------------------------------------------|-----------------------------------------------|
-| `campaignSecret`  | A secret that uniquely identifies your campaign (Perk) - Store in a repo secret |
-| `userId`  | The user's internal Id    |
-| `amount`  | Reward amount   |
-| `platform` _(optional)_  | User platform: github (default), twitter, github, google, slack, discord    |
+| `apiToken`  | Integration api token - Store in a repo secret |
+| `amount`  _(optional)_ | Donation amount (default is 1)  |
+| `currency` _(optional)_  | Currency (default is "USD")    |
+| `orderId` _(optional)_  | Unique donation identifier (default = "{owner}/{repo}/{branch}")    |
+| `memo` _(optional)_  | Donation memo (default includes {repo_name} and {pr_url})    |
 
 ### Outputs
 

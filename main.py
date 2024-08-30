@@ -4,7 +4,7 @@ import json
 
 
 def create_invoice(
-    pr_details, invoice_endpoint, api_key, amount, currency, order_id=None
+    pr_details, invoice_endpoint, api_key, amount, currency, memo=None, order_id=None
 ):
 
     # Extract PR number from the ref
@@ -15,9 +15,9 @@ def create_invoice(
     # Convert merge date to a more human-readable format
 
     # Create a descriptive memo with emojis
-    memo = (
+    default_memo = (
         f"🔧 **GitHub Repository:** {repo_name}\n"
-        f"🔗 **Pull Request URL:** <{pr_url}>\n\n"
+        f"🔗 **Pull Request URL:** <{pr_url}>\n\nrepo"
         "✨ Thank you for your contribution! 🎉"
     )
 
@@ -25,7 +25,7 @@ def create_invoice(
     invoice_data = {
         "amount": float(amount),
         "currency": currency,
-        "memo": memo,
+        "memo": memo or default_memo,
         "is_public": True,
         "order_id": order_id or f"{repo_name}:{source_branch}",
     }
@@ -74,6 +74,7 @@ if __name__ == "__main__":
         raise Exception("Missing INPUT_APITOKEN")
 
     order_id = os.environ.get("INPUT_ORDERID")
+    memo = os.environ.get("INPUT_MEMO")
     amount = os.environ.get("INPUT_AMOUNT", 1)
     currency = os.environ.get("INPUT_CURRENCY", "usd")
     server = os.environ.get("INPUT_SERVER", "https://perk.exchange")
@@ -87,4 +88,5 @@ if __name__ == "__main__":
         amount=amount,
         currency=currency,
         order_id=order_id,
+        memo=memo,
     )

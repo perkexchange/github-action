@@ -16,8 +16,8 @@ docker run --net="host" --env-file test.env ga-docker
 
 ```
 INPUT_APITOKEN=XXXXXXXXXXXX
-INPUT_USERID=131
-INPUT_PLATFORM=twitter
-INPUT_AMOUNT=1
+INPUT_ORDERID=
+INPUT_CURRENCY=USD
+INPUT_AMOUNT=1.25
 INPUT_SERVER=https://perk.exchange
 ```
