@@ -1,19 +1,19 @@
-name: "Perk.Exchange Reward"
-description: "Reward users when they engage with your repos"
+name: "Perk.Exchange Payment"
+description: "Accept payments from users"
 author: "Geoff Whittington"
 inputs:
-  campaignSecret:
-    description: "Campaign secret"
+  apiToken:
+    description: "API Token"
     default: ""
-  userId:
-    description: "User ID"
-    default: ""
-  platform:
-    description: "Platform"
-    default: "github"
   amount:
     description: "Reward amount"
-    default: "10"
+    default: "1"
+  currency:
+    description: "Reward currency"
+    default: "USD"
+  orderId:
+    description: "Unique payment identifier"
+    default: "{owner}/{repo}/{branch}"
   server:
     description: "Perk.Exchange server"
     default: "https://perk.exchange"

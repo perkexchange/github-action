@@ -46,7 +46,7 @@ jobs:
 | `apiToken`  | Integration api token - Store in a repo secret |
 | `amount`  _(optional)_ | Donation amount (default is 1)  |
 | `currency` _(optional)_  | Currency (default is "USD")    |
-| `orderId` _(optional)_  | Unique donation identifier (default = "{owner}/{repo}/{branch}")    |
+| `orderId` _(optional)_  | Unique payment identifier (default = "{owner}/{repo}/{branch}")    |
 | `memo` _(optional)_  | Donation memo (default includes {repo_name} and {pr_url})    |
 
 ### Outputs
